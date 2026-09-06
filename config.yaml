@@ -1,0 +1,80 @@
+app:
+  name: Movie Clip AI
+  version: 0.8.0
+
+paths:
+  input: input
+  output: output
+  temp: temp
+
+transcription:
+  model: medium
+  language: ru
+  device: auto
+  cpu_compute_type: int8
+  cuda_compute_type: float16
+  beam_size: 5
+  vad_filter: true
+
+subtitles:
+  enabled: true
+  font: Arial
+  font_size: 48
+  bold: true
+  outline: 3
+  shadow: 1
+  margin_bottom: 220
+  max_chars: 38
+  words_per_caption: 3
+  max_word_gap: 0.55
+
+candidate_generation:
+  min_duration: 20
+  max_duration: 60
+  target_duration: 35
+  padding_before: 0.8
+  padding_after: 1.2
+  minimum_pause: 0.45
+  scene_snap_window: 2.0
+
+selection:
+  clips: 3
+  max_overlap_ratio: 0.2
+  max_text_similarity: 0.75
+
+scene_detection:
+  enabled: true
+  threshold: 27.0
+  min_scene_length: 0.6
+  frame_skip: 3
+
+reframe:
+  mode: smart
+  face_model: assets/models/face_detection_yunet_2026may.onnx
+  sample_interval: 0.5
+  confidence_threshold: 0.7
+  smoothing: 0.45
+  deadzone_ratio: 0.04
+  max_pan_speed_ratio: 0.18
+  lock_to_scenes: false
+  refine_scene_cuts: true
+  cut_refine_window: 0.35
+  transition_lead_frames: 2
+  transition_hold_frames: 2
+
+encoding:
+  width: 1080
+  height: 1920
+  quality_mode: balanced
+  encoder: auto
+  video_codec: libx264
+  preset: medium
+  crf: 20
+  audio_codec: aac
+  audio_bitrate: 192k
+  background_blur: 30
+  remove_black_bars: true
+
+logging:
+  level: INFO
+  file: logs/movie_clip_ai.log

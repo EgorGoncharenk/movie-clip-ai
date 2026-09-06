@@ -1,0 +1,3 @@
+# CUDA 12 runtime libraries required by CTranslate2/faster-whisper on Windows.
+nvidia-cublas-cu12>=12.9,<13; platform_system == "Windows"
+nvidia-cudnn-cu12>=9.10,<10; platform_system == "Windows"

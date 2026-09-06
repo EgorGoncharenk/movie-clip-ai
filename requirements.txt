@@ -1,0 +1,10 @@
+faster-whisper>=1.2,<2
+pydantic>=2.10,<3
+PyYAML>=6,<7
+PySide6>=6.8,<7
+opencv-python>=4.10,<6
+psutil>=6,<8
+rich>=13,<15
+scenedetect>=0.7,<0.8
+typer>=0.15,<1
+pytest>=8,<10
